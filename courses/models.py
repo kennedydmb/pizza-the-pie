@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Courses(models.Model):
+class Course(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
