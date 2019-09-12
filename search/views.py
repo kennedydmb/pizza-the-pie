@@ -5,3 +5,4 @@ from courses.models import Course
 def do_search(request):
     courses = Course.objects.filter(name__icontains=request.GET['q'])
     return render(request, "courses.html", {"courses": courses})
+    
