@@ -7,6 +7,6 @@ def all_courses(request):
     This will return all the courses in the database
     """
     courses=Course.objects.all()
-    return render(request, courses.html, {"courses":courses})
+    return render(request, "courses.html", {"courses":courses})
     
     
