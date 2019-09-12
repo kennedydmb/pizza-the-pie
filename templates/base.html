@@ -37,12 +37,9 @@
                         <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Log In</a></li>
                     {% endif %}
                     <li>
-                        <a href="{% url 'view_cart' %}">
-                            <i class="fa fa-shopping-cart"></i> Cart
-                            {% if product_count > 0 %}
-                            <label class="badge badge-warning">{{ product_count }}</label>
-                            {% endif %}
-                        </a>
+                        
+                        <!-- Add view cart logic here -->
+                        
                     </li>
                 </ul>
             </div>
@@ -58,17 +55,12 @@
         </div>
     {% endif %}
     <div class="container">
-        <div class="display">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="submit">Search</button>
-            </form>
-        </div>
+        <!-- Search logic here -->
         {% block content %} {% endblock %}
     </div>
     <footer>
         <div class="container">
-            <p>Made by Code Institute bootcampers</p>
+            <!-- Footer here -->
         </div>
     </footer>
 </body>
