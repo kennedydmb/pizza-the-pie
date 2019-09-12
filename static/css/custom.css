@@ -32,12 +32,12 @@ footer {
     background-color: #c67605;
 }
 
-.product {
+.course {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
+    width: 335px;
+    height: 200px;
     margin: 0 auto;
 }
 
@@ -61,6 +61,6 @@ caption p {
     border: 1px solid #ddd;
 }
 
-.product-description {
-    min-height: 40px;
+.course-description {
+    min-height: 120px;
 }
