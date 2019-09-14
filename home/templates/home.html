@@ -1,1 +1,47 @@
-{% extends "base.html" %} {% block content %} {% endblock %}
+{% extends "base.html" %} {% block content %}
+
+<!-- Background image -->
+<div class="bg-image-full" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5');">
+</div>
+
+<!-- Links to purchasing categories -->
+<div class="container-fluid">
+    <div class="row">
+        
+        <!-- Link to courses section -->
+        <a href="{% url 'courses' %}">
+            <div class="col-md-4 home-btn-area course-btn">
+                <p>
+                    Courses
+                </p>
+            </div>
+        </a>
+        
+        <!-- Link to food order section -->
+        <a href="{% url 'food_orders' %}">
+            <div class="col-md-4 home-btn-area food-order-btn">
+                <p>
+                    Food Order
+                </p>
+            </div>
+        </a>
+        
+        <!-- Link to utensils section -->
+        <a href="/">
+            <div class="col-md-4 home-btn-area utensils-btn">
+                <p>
+                    Utensils
+                </p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Content section -->
+<div class="container">
+    <h1>Section Heading</h1>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+</div>
+
+{% endblock %}
