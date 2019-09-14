@@ -33,7 +33,7 @@ footer {
 }
 
 .course {
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     width: 335px;
@@ -63,4 +63,20 @@ caption p {
 
 .course-description {
     min-height: 120px;
+}
+
+.navbar {
+    background-image: linear-gradient(#0E53A7, #126fe0);
+}
+
+.form-control {
+    height: 30px;
+}
+
+.btn {
+    padding: 4px 12px;
+}
+
+.navbar-form {
+    margin-top: 10px;
 }

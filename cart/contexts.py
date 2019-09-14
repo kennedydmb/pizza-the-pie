@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
 from courses.models import Course
+from food_order.models import Food_order
 
 
 def cart_contents(request):
