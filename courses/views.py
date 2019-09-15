@@ -9,4 +9,10 @@ def all_courses(request):
     courses=Course.objects.all()
     return render(request, "courses.html", {"courses":courses})
     
+def courses_home(request):
+    """
+    This will return all the courses in the database
+    """
+    return render(request, "courses_home.html")
+    
     

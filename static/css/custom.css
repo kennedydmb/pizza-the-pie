@@ -1,6 +1,7 @@
 body {
     font-family: Arial;
     padding-top: 50px;
+    background-color: #F6F8FF;
 }
 
 footer {
@@ -36,7 +37,16 @@ footer {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    width: 335px;
+    width: 100%px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.food-order {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%px;
     height: 200px;
     margin: 0 auto;
 }
@@ -98,7 +108,7 @@ caption p {
     font-size: 60px;
     background-color: #0E53A7;
     color: white;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .food-order-btn {
@@ -107,7 +117,7 @@ caption p {
     font-size: 60px;
     background-color: #FFC700;
     color: white;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .utensils-btn {
@@ -116,5 +126,15 @@ caption p {
     font-size: 60px;
     background-color: #FF5C00;
     color: white;
-    text-decoration:none;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .navbar-form .form-control {
+        width: 150px;
+    }
 }

@@ -22,7 +22,6 @@ def cart_contents(request):
         total_course += quantity * course.price
         total_food_order += quantity * food_order.price
         product_count += quantity
-        cart_items.append({'id': id, 'quantity': quantity, 'course': course, 'food_order':food_order})
+        cart_items.append({'id': id, 'quantity': quantity, 'course': course})
     
-    total = total_course + total_food_order
     return {'cart_items': cart_items, 'total': total, 'product_count': product_count}
