@@ -3,7 +3,7 @@
     <div class="row row-flex">
 
         {% for food_order in food_orders %}
-        <div class="col-md-6 food-order-box">
+        <div class="col-xs-6 food-order-box">
             <div class="food-order col-md-2" style="background-image: url('{{ MEDIA_URL }}{{ food_order.image }}')"></div>
             <div class="col-md-10">
                 <h3>{{ food_order.name }}</h3>
