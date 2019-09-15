@@ -8,5 +8,9 @@ def all_food_orders(request):
     """
     food_orders=Food_order.objects.all()
     return render(request, "food_order.html", {"food_orders":food_orders})
+
+def food_ordering(request):
+    
+    return render(request, "food_order_home.html")
     
     
