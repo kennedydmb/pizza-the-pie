@@ -162,6 +162,9 @@ a:hover {
     color: white;
 }
 
+.registration {
+}
+
 @media (min-width: 768px) {
     .navbar-form .form-control {
         width: 150px;

@@ -29,12 +29,20 @@
                 <a class="navbar-brand" href="/">P.I.Y</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-left">
-                    <li>
-                        <a href="{% url 'courses' %}">Courses</a>
+
+                <ul class="nav navbar-nav">
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Sections <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'courses' %}">Courses</a></li>
+                            <li><a href="{% url 'food_orders' %}">Food Orders</a></li>
+                            <li><a href="{% url 'utensils' %}">Utensils</a></li>
+                        </ul>
                     </li>
-                    
                 </ul>
+
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <form class="navbar-form" action="{% url 'search' %}" method="get">
@@ -59,7 +67,7 @@
                             {% endif %}
                         </a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -70,8 +78,7 @@
             {% for message in messages %} {{ message }} {% endfor %}
         </div>
     </div>
-    {% endif %}
-        {% block content %} {% endblock %}
+    {% endif %} {% block content %} {% endblock %}
 
     <footer>
         <div class="container">
