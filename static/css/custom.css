@@ -1,3 +1,6 @@
+/* Beginning of CSS --------------------------------------------------------- */
+/* Base changes ------------------------------------------------------------- */
+
 body {
     font-family: Arial;
     padding-top: 50px;
@@ -12,26 +15,11 @@ footer {
     color: #A9A9A9;
 }
 
-.icon-bar {
-    background-color: #fff;
+caption p {
+    word-wrap: break-word;
 }
 
-.accountform {
-    padding-top: 20px;
-}
-
-.badge {
-    padding-left: 9px;
-    padding-right: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-}
-
-.label-warning[href],
-.badge-warning[href] {
-    background-color: #c67605;
-}
+/* Styling of courses.html -------------------------------------------------- */
 
 .course {
     background-size: cover;
@@ -42,7 +30,27 @@ footer {
     margin: 0 auto;
 }
 
+.description {
+    min-height: 120px;
+}
+
+/* Styling food_order.html -------------------------------------------------- */
+
 .food-order {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.food-order-box {
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+.utensil {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -51,9 +59,7 @@ footer {
     margin: 0 auto;
 }
 
-caption p {
-    word-wrap: break-word;
-}
+
 
 .row.row-flex {
     display: flex;
@@ -71,9 +77,7 @@ caption p {
     border: 1px solid #ddd;
 }
 
-.course-description {
-    min-height: 120px;
-}
+
 
 .navbar {
     background-image: linear-gradient(#0E53A7, #126fe0);

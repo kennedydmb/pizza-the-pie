@@ -1,18 +1,22 @@
 {% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
 <div class="container">
     <div class="row row-flex">
-        {{ cart_items }}
+        
+        <!-- Loops through each item in the cart -->
         {% for item in cart_items %} 
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display">
-
+            
+            <!-- Shows image of cart item -->
             <div class="course" style="background-image: url('{{ MEDIA_URL }}{{ item.course.image }}')"></div>
-
             <div class="caption">
+                
+                <!-- Some details of cart item -->
                 <h3>{{ item.course.name }}</h3>
                 <p class="course-description">{{ item.course.description }}</p>
                 <p>{{ item.course.price }}</p>
+                
+                <!-- Form that allows user to adjust quantity of cart items -->
                 <p>
-
                     <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                         {% csrf_token %}
                         <div class="form-group">
@@ -28,10 +32,11 @@
                 </p>
             </div>
         </div>
-
         {% endfor %}
     </div>
     <div class="row">
+        
+        <!-- Shows the overall total of the cart and a link to complete payment -->
         <p>Total</p>
         <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
         <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
