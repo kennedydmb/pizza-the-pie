@@ -8,7 +8,7 @@
 
                 <h3>{{ course.name }}</h3>
                 <p class="course-description">{{ course.description }}</p>
-                <p>{{ course.price }}</p>
+                <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ course.price }}</p>
 
                 <form method="post" action="{% url 'add_to_cart' course.id %}">
                     {% csrf_token %}

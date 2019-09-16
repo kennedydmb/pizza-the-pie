@@ -1,49 +1,48 @@
 {% extends "base.html" %} {% block content %}
 
 <!-- Background image -->
-<div class="bg-image-full" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5');">
+<div class="bg-image-full" style="background-image: url(https://images.unsplash.com/photo-1522881193457-37ae97c905bf);">
+
+    <!-- Link to courses section -->
+    <div class="col-xs-10 col-xs-offset-1 text-container">
+        <p class="home-head">Learn skills from experienced industry leaders</p>
+        <p class="light-text">Explore over 30 courses to guide you on your way to making your business stronger.</p>
+        
+        {% if user.is_authenticated %}
+        <a href="{% url 'courses' %}">
+            <p class="link-to">
+                Courses
+            </p>
+        </a>
+        {% else %}
+        <a href="{% url 'courses' %}">
+            <p class="link-to">
+                Courses
+            </p>
+        </a>
+        <a href="{% url 'register' %}">
+            <p class="link-to">
+                Register
+            </p>
+        </a>
+        <a href="{% url 'login' %}">
+            <p class="link-to">
+                Login
+            </p>
+        </a>
+        {% endif %}
+
+    </div>
+
 </div>
 
-<!-- Links to purchasing categories -->
-<div class="container-fluid">
-    <div class="row">
-        
-        <!-- Link to courses section -->
-        <a href="{% url 'explore' %}">
-            <div class="col-md-4 home-btn-area course-btn">
-                <p>
-                    Courses
-                </p>
-            </div>
-        </a>
-        
-        <!-- Link to food order section -->
-        <a href="{% url 'food_ordering' %}">
-            <div class="col-md-4 home-btn-area food-order-btn">
-                <p>
-                    Food Order
-                </p>
-            </div>
-        </a>
-        
-        <!-- Link to utensils section -->
-        <a href="{% url 'utensil' %}">
-            <div class="col-md-4 home-btn-area utensils-btn">
-                <p>
-                    Utensils
-                </p>
-            </div>
-        </a>
-    </div>
-</div>
+
 
 <!-- Content section -->
 <div class="container">
     <h1>Welcome</h1>
     <p class="lead">So you want a pizza the pie huh? Welcome to PIY!</p>
-    <p>PIY is a platform for upcoming pizza makers to hone their skills, order 
-    ingredients, and order utensils. Why come to us? We have done all the hard work in 
-    sourcing the very best. So, if it's training courses for staff, looking for some premium ingredients, or looking for that 'just right' pizza oven, you're in the right place!</p>
+    <p>PIY is a training portal aimed at businesses looking to start up pizza shops. We have courses designed to help businesses on their path. Everything from basic customer service, to more advanced dough management training. If you are looking for help
+        you have come to the right place, our team has over 50 years of pizza making experience to help you on your way.</p>
 </div>
-
 {% endblock %}

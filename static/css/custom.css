@@ -23,7 +23,11 @@ caption p {
     word-wrap: break-word;
 }
 
-h1,h2,h3,h4,h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: nunito;
 }
 
@@ -64,7 +68,7 @@ h1,h2,h3,h4,h5 {
 }
 
 .food-order-description {
-    min-height:30px;
+    min-height: 30px;
 }
 
 /* Styling utensils.html ---------------------------------------------------- */
@@ -115,16 +119,16 @@ h1,h2,h3,h4,h5 {
 }
 
 .bg-image-full {
-    height: 350px;
+    height: 60vh;
     background-size: cover;
     background-position: center;
 }
 
-.home {
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
+.home-head {
+    font-size: 20px;
+    font-family: nunito;
+    font-weight: 800;
+    color: white;
 }
 
 .home-btn-area {
@@ -165,7 +169,7 @@ a:hover {
 
 .link-to {
     display: inline-block;
-    padding: 10px 20px 10px 20px;
+    padding: 2px 25px 2px 25px;
     border: 1px solid white;
     border-radius: 0.25rem;
     background-color: #0E53A7;
@@ -173,23 +177,24 @@ a:hover {
     font-size: 25px;
     transition: all 0.2s;
     text-align: left;
+    margin: 10px;
 }
 
 .text-container {
     position: relative;
-    top:10vh;
-    right:20;
+    top: 8vh;
     font-family: nunito;
     font-weight: 600;
-    background-color: #000000CC;
+    background-color: #0000006C;
+    padding: 20px 20px 20px 20px;
+    text-align: center;
 }
 
 .light-text {
     color: white;
 }
 
-.registration {
-}
+.registration {}
 
 @media (min-width: 768px) {
     .navbar-form .form-control {
