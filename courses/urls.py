@@ -1,8 +1,8 @@
 from django.conf.urls import url, include
-from .views import all_courses, courses_home
+from .views import all_courses
 
 urlpatterns = [
     
-    url(r'^explore/$', courses_home, name='explore'),
-    url(r'^courses/$', all_courses, name='courses'),
+    url(r'^$', all_courses, name='courses'),
+    
 ]

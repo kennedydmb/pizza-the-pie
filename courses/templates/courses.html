@@ -6,7 +6,7 @@
             <div class="course-panel">
                 <div class="course" style="background-image: url('{{ MEDIA_URL }}{{ course.image }}')"></div>
 
-                <h3>{{ course.name }}</h3>
+                <h3>{{ course.name }}{{ course.average_rating | floatformat }}</h3>
                 <p class="course-description">{{ course.description }}</p>
                 <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ course.price }}</p>
 
