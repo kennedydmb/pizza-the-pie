@@ -1,5 +1,17 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
+
+    <!-- Sort logic here -->
+    <div class="row">
+        <p>Sort by:</p>
+        <form class="navbar-form" action="{% url 'price_ascend' %}" method="get">
+            <button class="btn btn-default hidden-sm" type="submit">Price Ascending</button>
+        </form>
+        <form class="navbar-form" action="{% url 'price_descend' %}" method="get">
+            <button class="btn btn-default hidden-sm" type="submit">Price Descending</button>
+        </form>
+    </div>
+
     <div class="row">
         {% for course in courses %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4">
@@ -23,7 +35,7 @@
             </div>
             <hr/>
         </div>
-        
+
         {% endfor %}
     </div>
 </div>

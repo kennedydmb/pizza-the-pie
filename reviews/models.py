@@ -13,5 +13,5 @@ class Review(models.Model):
     course = models.ForeignKey(Course)
     pub_date = models.DateTimeField('date published')
     user_name = models.CharField(max_length=100)
-    comment = models.CharField(max_length=200)
+    comment = models.TextField(max_length=300)
     rating = models.IntegerField(choices=RATING_CHOICES)
