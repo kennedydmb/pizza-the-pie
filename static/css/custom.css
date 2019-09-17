@@ -194,6 +194,10 @@ a:hover {
     color: white;
 }
 
+.star-color {
+    color:#e3c800;
+}
+
 .registration {}
 
 @media (min-width: 768px) {

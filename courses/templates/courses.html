@@ -6,7 +6,8 @@
             <div class="course-panel">
                 <div class="course" style="background-image: url('{{ MEDIA_URL }}{{ course.image }}')"></div>
 
-                <h3>{{ course.name }}{{ course.average_rating | floatformat }}</h3>
+                <h3>{{ course.name }}</h3>
+                <p>{{ course.average_rating | floatformat }} <i class="fa fa-star star-color" aria-hidden="true"></i><a href="/"> Learn more</a></p>
                 <p class="course-description">{{ course.description }}</p>
                 <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ course.price }}</p>
 

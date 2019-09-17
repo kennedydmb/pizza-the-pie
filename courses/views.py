@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Course, Review
+from .models import Course
+from reviews.models import Review
 
 # Create your views here.
 def all_courses(request):
