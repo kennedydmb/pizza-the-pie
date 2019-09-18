@@ -119,7 +119,7 @@ h5 {
 }
 
 .bg-image-full {
-    height: 60vh;
+    height: 40vh;
     background-size: cover;
     background-position: center;
 }
@@ -182,7 +182,7 @@ a:hover {
 
 .text-container {
     position: relative;
-    top: 8vh;
+    border-radius: 4px;
     font-family: nunito;
     font-weight: 600;
     background-color: #0000006C;
