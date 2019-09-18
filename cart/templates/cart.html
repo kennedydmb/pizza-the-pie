@@ -1,46 +1,44 @@
 {% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
 <div class="container">
+    
+    <div class="row cart-header">
+
+        <!-- Shows the overall total of the cart and a link to complete payment -->
+        <span>{{ user | title }}'s cart | Total
+        <i class="fa fa-gbp" aria-hidden="true"></i>{{ total }}
+        <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a></span>
+    </div>
+    
     <div class="row row-flex">
-        
+
         <!-- Loops through each item in the cart -->
-        {% for item in cart_items %} 
-        {{ item }}
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display">
-            
-            <!-- Shows image of cart item -->
-            <div class="course" style="background-image: url('{{ MEDIA_URL }}{{ item.course.image }}')"></div>
-            <div class="caption">
-                
-                <!-- Some details of cart item -->
-                <h3>{{ item.course.name }}</h3>
-                <p class="course-description">{{ item.course.description }}</p>
-                <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ item.course.price }}</p>
-                
-                <!-- Form that allows user to adjust quantity of cart items -->
-                <p>
+        {% for item in cart_items %}
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4">
+            <div class="course-panel">
+
+                <!-- Shows image of cart item -->
+                <div class="course" style="background-image: url('{{ MEDIA_URL }}{{ item.course.image }}')"></div>
+                <div class="course-info-area light-text">
+                    <!-- Some details of cart item -->
+                    <h3 class="light-text">{{item.quantity}} x {{ item.course.name }}</h3>
+                    <p>{{ item.course.average_rating | floatformat }} <i class="fa fa-star star-color" aria-hidden="true"></i><a href="/"> Learn more</a></p>
+                    <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ item.course.price }}</p>
+
+                    <!-- Form that allows user to adjust quantity of cart items -->
                     <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="exampleInputAmount" class="sr-only">New Qty</label>
                             <div class="input-group">
-                                <div class="input-group-addon">Qty</div>
-                                <input name="quantity" type="number" min="0" max="999" class="form-control" required>
-                                <div class="input-group-addon">{{item.quantity}}</div>
+                                <input name="quantity" type="number" min="0" max="999" class="form-control" placeholder="New QTY" required>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
                     </form>
-                </p>
+                </div>
             </div>
         </div>
-        {% endfor %}
     </div>
-    <div class="row">
-        
-        <!-- Shows the overall total of the cart and a link to complete payment -->
-        <p>Total</p>
-        <p><i class="fa fa-gbp" aria-hidden="true"></i>{{ total }}</p>
-        <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
-    </div>
+    {% endfor %}
 </div>
 {% endblock %}

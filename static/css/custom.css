@@ -40,6 +40,7 @@ h5 {
     width: 100%px;
     height: 200px;
     margin: 0 auto;
+    border-radius: 4px;
 }
 
 .course-description {
@@ -48,6 +49,14 @@ h5 {
 
 .course-panel {
     margin: 40px 0px 40px 0px;
+}
+
+.course-info-area {
+    margin: -4px 0px 40px 0px;
+    padding: 10px;
+    background-color: #0E53A7;
+    border-radius: 4px;
+    
 }
 
 /* Styling food_order.html -------------------------------------------------- */
@@ -82,7 +91,15 @@ h5 {
     margin: 0 auto;
 }
 
-
+.cart-header {
+    font-size: 30px;
+    margin-top: 40px;
+    text-align: center;
+    background-color: #0E53A7;
+    border-radius: 4px;
+    color: white;
+    padding: 15px;
+}
 
 .row.row-flex {
     display: flex;

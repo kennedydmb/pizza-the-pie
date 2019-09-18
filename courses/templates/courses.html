@@ -19,25 +19,31 @@
     </div>
 
     <div class="row">
+        <!-- Loops through each item in courses -->
         {% for course in courses %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4">
             <div class="course-panel">
+
+                <!-- Shows image of cart item -->
                 <div class="course" style="background-image: url('{{ MEDIA_URL }}{{ course.image }}')"></div>
+                <div class="course-info-area light-text">
 
-                <h3>{{ course.name }}</h3>
-                <p>{{ course.average_rating | floatformat }} <i class="fa fa-star star-color" aria-hidden="true"></i><a href="/"> Learn more</a></p>
-                <p class="course-description">{{ course.description }}</p>
-                <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ course.price }}</p>
+                    <!-- Some details of cart item -->
+                    <h3 class="light-text">{{ course.name }}</h3>
+                    <p>{{ course.average_rating | floatformat }} <i class="fa fa-star star-color" aria-hidden="true"></i><a href="/"> Learn more</a></p>
+                    <p class="course-description">{{ course.description }}</p>
+                    <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ course.price }}</p>
 
-                <form method="post" action="{% url 'add_to_cart' course.id %}">
-                    {% csrf_token %}
-                    <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity" required>
-                        <span class="input-group-btn">
+                    <form method="post" action="{% url 'add_to_cart' course.id %}">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity" required>
+                            <span class="input-group-btn">
                             <button class="btn btn-success" type="submit">Add</button>
                         </span>
-                    </div>
-                </form>
+                        </div>
+                    </form>
+                </div>
             </div>
             <hr/>
         </div>
