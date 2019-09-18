@@ -23,7 +23,7 @@
                     <h3>{{ item.course.name }}</h3>
                     <p class="course-description">{{ item.course.description }}</p>
                     <p>{{ item.quantity }}</p>
-                    <p>{{ item.course.price }}</p>
+                    <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ item.course.price }}</p>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
     <!-- Shows the total cost -->
     <div class="row">
         <p>Total</p>
-        <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
+        <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ total }}</p>
     </div>
 
     <!-- Payment form -->

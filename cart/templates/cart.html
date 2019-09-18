@@ -14,7 +14,7 @@
                 <!-- Some details of cart item -->
                 <h3>{{ item.course.name }}</h3>
                 <p class="course-description">{{ item.course.description }}</p>
-                <p>{{ item.course.price }}</p>
+                <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ item.course.price }}</p>
                 
                 <!-- Form that allows user to adjust quantity of cart items -->
                 <p>
@@ -39,7 +39,7 @@
         
         <!-- Shows the overall total of the cart and a link to complete payment -->
         <p>Total</p>
-        <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
+        <p><i class="fa fa-gbp" aria-hidden="true"></i>{{ total }}</p>
         <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
     </div>
 </div>
