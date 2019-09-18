@@ -91,7 +91,33 @@ h5 {
     margin: 0 auto;
 }
 
-.cart-header {
+.sort-inline {
+    display: flex;
+}
+
+.sort-height {
+    line-height: 60px;
+    font-size: 20px;
+}
+
+.checkout-summary {
+    font-size: 20px;
+    margin: 20px 0px 20px 0px;
+}
+
+.summary-item {
+    
+    font-family: nunito;
+    font-weight: 800;
+    color: #0E53A7;
+    
+}
+
+.summary-cost {
+    
+}
+
+.header {
     font-size: 30px;
     margin-top: 40px;
     text-align: center;

@@ -2,19 +2,19 @@
 <div class="container">
 
     <!-- Sort logic here -->
-    <div class="row">
-        <p>Sort by:</p>
+    <div class="row header sort-inline hidden-xs hidden-sm">
+        <p class="sort-height">Sort by:</p>
         <form class="navbar-form" action="{% url 'price_ascend' %}" method="get">
-            <button class="btn btn-default hidden-sm" type="submit">Price Ascending</button>
+            <button class="btn btn-default" type="submit">Price <i class="fa fa-arrow-up" aria-hidden="true"></i></button>
         </form>
         <form class="navbar-form" action="{% url 'price_descend' %}" method="get">
-            <button class="btn btn-default hidden-sm" type="submit">Price Descending</button>
+            <button class="btn btn-default" type="submit">Price <i class="fa fa-arrow-down" aria-hidden="true"></i></button>
         </form>
         <form class="navbar-form" action="{% url 'name_ascend' %}" method="get">
-            <button class="btn btn-default hidden-sm" type="submit">Name ascending</button>
+            <button class="btn btn-default "  action="{% url 'name_ascend' %}" type="submit">Name <i class="fa fa-arrow-up" aria-hidden="true"></i></button>
         </form>
         <form class="navbar-form" action="{% url 'name_descend' %}" method="get">
-            <button class="btn btn-default hidden-sm" type="submit">Name descending</button>
+            <button class="btn btn-default" type="submit">Name <i class="fa fa-arrow-down" aria-hidden="true"></i></button>
         </form>
     </div>
 
@@ -49,10 +49,10 @@
         </div>
 
         {% endfor %}
-        
+
     </div>
-<div class="pagination">
-            <span class="step-links">
+    <div class="pagination">
+        <span class="step-links">
         {% if courses.has_previous %}
             <a href="?page={{ courses.previous_page_number }}">previous</a>
         {% endif %}
@@ -60,9 +60,9 @@
         <span class="current">
             Page {{ courses.number }} of {{ courses.paginator.num_pages }}.
         </span> {% if courses.has_next %}
-            <a href="?page={{ courses.next_page_number }}">next</a> {% endif %}
-            </span>
-        </div>
+        <a href="?page={{ courses.next_page_number }}">next</a> {% endif %}
+        </span>
+    </div>
 </div>
 
 {% endblock %}
