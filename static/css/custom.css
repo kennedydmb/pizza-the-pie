@@ -6,7 +6,7 @@
 /* Base changes ------------------------------------------------------------- */
 
 body {
-    font-family: Arial;
+    font-family: nunito;
     padding-top: 50px;
     background-color: #F6F8FF;
 }
@@ -56,7 +56,7 @@ h5 {
     padding: 10px;
     background-color: #0E53A7;
     border-radius: 4px;
-    
+
 }
 
 /* Styling food_order.html -------------------------------------------------- */
@@ -106,21 +106,71 @@ h5 {
 }
 
 .summary-item {
-    
+
     font-family: nunito;
     font-weight: 800;
     color: #0E53A7;
-    
+
 }
 
-.summary-cost {
-    
+.summary-cost {}
+
+.hr-dark-grey {
+    border: 1px solid grey;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.payment-btn {
+    background-color: #0E53A7;
+    color: white;
+    border-radius: 6px;
+}
+
+.review-header {
+    font-size: 100px !important;
+    height: 36vh;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.review-name {
+    position: relative;
+    text-shadow: 0 0 14px black;
+}
+
+.review-header-sm {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.review-info-area {
+    margin: 20px 10px 20px 10px;
+    padding: 10px;
+    background-color: #0E53A7;
+    border-radius: 4px;
+
+}
+
+.review-inner-header {
+    margin-top: 20px;
+    min-height: 30px;
+    font-size: 20px;
+}
+
+.review-btn {
+    font-size: 8px !important;
+    height: 20px;
+    margin: 0 5px 0 5px;
+    position: sticky;
+    top: 5px;
 }
 
 .header {
     font-size: 30px;
     margin-top: 40px;
     text-align: center;
+    background-position: center;
     background-color: #0E53A7;
     border-radius: 4px;
     color: white;
@@ -238,7 +288,7 @@ a:hover {
 }
 
 .star-color {
-    color:#e3c800;
+    color: #e3c800;
 }
 
 .registration {}

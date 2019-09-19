@@ -1,15 +1,16 @@
 {% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
 <div class="container">
-    
+
     <div class="row header">
 
         <!-- Shows the overall total of the cart and a link to complete payment -->
         <span>{{ user | title }}'s cart | Total
         <i class="fa fa-gbp" aria-hidden="true"></i>{{ total }}
-        <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a></span>
+        <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+        </span>
     </div>
-    
-    <div class="row row-flex">
+
+    <div class="row">
 
         <!-- Loops through each item in the cart -->
         {% for item in cart_items %}
@@ -19,6 +20,7 @@
                 <!-- Shows image of cart item -->
                 <div class="course" style="background-image: url('{{ MEDIA_URL }}{{ item.course.image }}')"></div>
                 <div class="course-info-area light-text">
+
                     <!-- Some details of cart item -->
                     <h3 class="light-text">{{item.quantity}} x {{ item.course.name }}</h3>
                     <p>{{ item.course.average_rating | floatformat }} <i class="fa fa-star star-color" aria-hidden="true"></i><a href="/"> Learn more</a></p>
@@ -38,7 +40,8 @@
                 </div>
             </div>
         </div>
+
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 {% endblock %}

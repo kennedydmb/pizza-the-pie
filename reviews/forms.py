@@ -1,7 +1,8 @@
-from django.forms import ModelForm, Textarea
-from reviews.models import Review
+from django import forms
+from .models import Review
 
-class ReviewForm(ModelForm):
+class ReviewForm(forms.ModelForm):
+    
     class Meta:
         model = Review
         fields = ('user_name', 'rating', 'comment')

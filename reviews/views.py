@@ -1,9 +1,13 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from .models import Review
-from courses.models import Course
+  
+from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .forms import ReviewForm
+from .models import Review
+from django.conf import settings
+from django.utils import timezone
+from courses.models import Course
+
 import datetime
 
 
@@ -14,22 +18,22 @@ def course_review(request, course_id):
     return render(request, "review.html", {"reviews":reviews, "course":course})
     
 def add_review(request, course_id):
-    course = get_object_or_404(Course, pk=course_id)
-    form = ReviewForm(request.POST)
-    if form.is_valid():
-        rating = form.cleaned_data['rating']
-        comment = form.cleaned_data['comment']
-        user_name = form.cleaned_data['user_name']
-        review = Review()
-        review.course = course
-        review.user_name = user_name
-        review.rating = rating
-        review.comment = comment
-        review.pub_date = datetime.datetime.now()
-        review.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-        return HttpResponseRedirect(reverse('course_review', args=(course_id)))
-
-    return render(request, "review.html", {'course': course, 'form': form})
+    if request.method=="POST":
+        review_form = ReviewForm(request.POST)
+        
+        if review_form.is_valid():
+            review = review_form.save
+            review.date = timezone.now()
+            review.save()
+            
+        else:
+            print(review_form.errors)
+            messages.error(request, "We were unable to take a payment with that card!")
+    else:
+        
+        review_form = ReviewForm()
+        
+    
+    return render(request, "review.html", {'review_form': review_form})
+    
+    
