@@ -13,27 +13,21 @@ import datetime
 
 # Create your views here.
 def course_review(request, course_id):
+    """
+    Gets the most recent 10 reviews for the course
+    """
     course = get_object_or_404(Course, pk=course_id)
-    reviews= Review.objects.filter(course = course_id)
+    reviews= Review.objects.filter(course = course_id).order_by('-pub_date')[:10]
     return render(request, "review.html", {"reviews":reviews, "course":course})
     
-def add_review(request, course_id):
-    if request.method=="POST":
-        review_form = ReviewForm(request.POST)
-        
-        if review_form.is_valid():
-            review = review_form.save
-            review.date = timezone.now()
-            review.save()
-            
-        else:
-            print(review_form.errors)
-            messages.error(request, "We were unable to take a payment with that card!")
-    else:
-        
-        review_form = ReviewForm()
-        
-    
-    return render(request, "review.html", {'review_form': review_form})
+def add_review(request,course_id):
+    """
+    To display the review form to the user
+    """
+    form = ReviewForm(request.POST or None)
+    if form.is_valid():
+        form.user_name = "hey"
+        form.save()
+    return render(request, "create_review.html", {'form': form})
     
     

@@ -1,9 +1,8 @@
 {% extends 'base.html' %} {% load static from staticfiles %} {% load bootstrap_tags %} {% block content %}
 <div class="container">
 
+    <!-- Shows the overall total of the cart and a link to complete payment -->
     <div class="row header">
-
-        <!-- Shows the overall total of the cart and a link to complete payment -->
         <span>{{ user | title }}'s cart | Total
         <i class="fa fa-gbp" aria-hidden="true"></i>{{ total }}
         <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
@@ -40,8 +39,8 @@
                 </div>
             </div>
         </div>
-
         {% endfor %}
     </div>
 </div>
+
 {% endblock %}

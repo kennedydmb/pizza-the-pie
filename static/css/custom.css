@@ -152,6 +152,14 @@ h5 {
 
 }
 
+.form-control {
+    padding: 0px 12px 0px 12px !important;
+}
+
+.searchbar {
+    width:80%;
+}
+
 .review-inner-header {
     margin-top: 20px;
     min-height: 30px;
@@ -159,11 +167,7 @@ h5 {
 }
 
 .review-btn {
-    font-size: 8px !important;
-    height: 20px;
-    margin: 0 5px 0 5px;
-    position: sticky;
-    top: 5px;
+    margin: 20px 0px 20px 0px;
 }
 
 .header {
@@ -175,6 +179,7 @@ h5 {
     border-radius: 4px;
     color: white;
     padding: 15px;
+    background-size: cover;
 }
 
 .row.row-flex {
