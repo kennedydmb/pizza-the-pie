@@ -1,4 +1,3 @@
-  
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -7,6 +6,7 @@ from .models import Review
 from django.conf import settings
 from django.utils import timezone
 from courses.models import Course
+from django.contrib.auth.models import User
 
 import datetime
 
@@ -17,17 +17,17 @@ def course_review(request, course_id):
     Gets the most recent 10 reviews for the course
     """
     course = get_object_or_404(Course, pk=course_id)
-    reviews= Review.objects.filter(course = course_id).order_by('-pub_date')[:10]
+    reviews= Review.objects.filter(course = course_id) #.order_by('-pub_date')[:10]
     return render(request, "review.html", {"reviews":reviews, "course":course})
-    
-def add_review(request,course_id):
-    """
-    To display the review form to the user
-    """
-    form = ReviewForm(request.POST or None)
-    if form.is_valid():
-        form.user_name = "hey"
-        form.save()
-    return render(request, "create_review.html", {'form': form})
-    
-    
+
+def add_review(request, course_id):
+    course = get_object_or_404(Course, pk=course_id)
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.course = course
+        return render(request, "create_review.html", {'course': course,'form': form})
+    else: 
+        form=ReviewForm() 
+        return render(request, "create_review.html", {'form': form}) 
