@@ -17,10 +17,14 @@
             <div class="course-panel">
 
                 <!-- Shows image of cart item -->
-                <div class="course" style="background-image: url('{{ MEDIA_URL }}{{ item.course.image }}')"></div>
-                <div class="course-info-area light-text">
+                <div class="course" style="background-image: url('{{ MEDIA_URL }}{{ item.course.image }}')">
 
-                    <!-- Some details of cart item -->
+                    <!-- Allows the user to delete an item from the cart -->
+                    <a class="btn btn-danger" href="{% url 'delete_item' item.id %}"><i class="fa fa-times" aria-hidden="true"></i> Delete</a>
+                </div>
+
+                <!-- Some details of cart item -->
+                <div class="course-info-area light-text">
                     <h5 class="light-text">{{item.quantity}} x {{ item.course.name }}</h5>
                     <p>{{ item.course.average_rating | floatformat }} <i class="fa fa-star star-color" aria-hidden="true"></i></p>
                     <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ item.course.price }}</p>
@@ -30,14 +34,7 @@
                         {% csrf_token %}
                         <label for="exampleInputAmount" class="sr-only">Qty</label>
                         <input name="quantity" type="number" min="0" max="999" class="form-control" placeholder="QTY" required>
-                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
-                    </form>
-                    
-                    <!-- Allows the user to delete an item from the cart -->
-                    <form class="form-inline" method="post" action="{% url 'delete_item' item.id %}">
-                        {% csrf_token %}
-                        <label for="exampleInputAmount" class="sr-only">Qty</label>
-                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Delete</button>
+                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Amend</button>
                     </form>
                 </div>
             </div>

@@ -20,14 +20,15 @@
             <div class="col-md-4">
                 <span>Summary</span>
                 <hr class="hr-dark-grey" />
+
                 <!-- Loops through each item and gives summary of it's details -->
                 {% for item in cart_items %}
+
+                <!-- Some details of cart item -->
                 <div>
-                    <!-- Some details of cart item -->
                     <span class="summary-item">{{item.quantity}} x {{ item.course.name }} -</span>
                     <span class="summary-cost"><i class="fa fa-gbp" aria-hidden="true"></i> {{ item.course.price }}</span>
                 </div>
-
                 {% endfor %}
                 <hr class="hr-dark-grey" />
 

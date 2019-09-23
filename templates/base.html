@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Custom Tab Icon -->
+    <link rel="icon" href="https://i.imgur.com/SbMyD58.png"> 
     {% block head_js %} {% endblock head_js %}
 </head>
 
@@ -31,7 +34,7 @@
                 </button>
 
                     <!-- Logo -->
-                    <a class="navbar-brand" href="/">P.I.Y</a>
+                    <a href="{% url 'courses' %}"><img class="logo" src="https://i.imgur.com/SbMyD58.png"/></a>
                 </div>
 
                 <!-- Navbar that appears on devices medium and above -->
@@ -57,6 +60,10 @@
                                 </div>
                             </form>
                         </li>
+
+
+                        <!-- Links the user will see depending on wether or not they are logged in -->
+                        {% if user.is_authenticated %}
                         <li>
                             <a href="{% url 'view_cart' %}">
                             <i class="fa fa-shopping-cart"></i> Cart
@@ -65,9 +72,6 @@
                             {% endif %}
                         </a>
                         </li>
-                        
-                        <!-- Links the user will see depending on wether or not they are logged in -->
-                        {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a></li>
                         <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Log Out</a></li>
                         {% else %}

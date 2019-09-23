@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
 
-    <!-- Sort logic here -->
+    <!-- Sorting logic-->
     <div class="row header sort-inline hidden-xs hidden-sm">
         <p class="sort-height">Sort by:</p>
         <form class="navbar-form" action="{% url 'price_ascend' %}" method="get">
@@ -19,7 +19,6 @@
     </div>
 
     <div class="row">
-        
         <!-- Loops through each item in courses -->
         {% for course in courses %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4">
@@ -35,6 +34,7 @@
                     <p class="course-description">{{ course.description }}</p>
                     <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ course.price }}</p>
 
+                    <!-- Allows user to choose the quantity of item they would like -->
                     <form method="post" action="{% url 'add_to_cart' course.id %}">
                         {% csrf_token %}
                         <div class="input-group">
@@ -48,16 +48,15 @@
             </div>
             <hr/>
         </div>
-
         {% endfor %}
-
     </div>
+    
+    <!-- If there are more than 6 items on the page, the user can navigate through them here -->
     <div class="pagination">
         <span class="step-links">
         {% if courses.has_previous %}
             <a href="?page={{ courses.previous_page_number }}">previous</a>
         {% endif %}
-
         <span class="current">
             Page {{ courses.number }} of {{ courses.paginator.num_pages }}.
         </span> {% if courses.has_next %}
