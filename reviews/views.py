@@ -17,7 +17,7 @@ def course_review(request, course_id):
     Gets the most recent 10 reviews for the course
     """
     course = get_object_or_404(Course, pk=course_id)
-    reviews= Review.objects.filter(course = course_id) #.order_by('-pub_date')[:10]
+    reviews= Review.objects.filter(course = course_id).order_by('-pub_date')[:10]
     return render(request, "review.html", {"reviews":reviews, "course":course})
 
 def add_review(request, course_id):
@@ -27,6 +27,8 @@ def add_review(request, course_id):
         if form.is_valid():
             review = form.save(commit=False)
             review.course = course
+            review.user_name = request.user
+            form.save()
         return render(request, "create_review.html", {'course': course,'form': form})
     else: 
         form=ReviewForm() 
