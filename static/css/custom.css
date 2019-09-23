@@ -15,7 +15,6 @@ body {
     min-height: 78vh;
 }
 
-
 caption p {
     word-wrap: break-word;
 }
@@ -26,6 +25,42 @@ h3,
 h4,
 h5 {
     font-family: nunito;
+}
+
+/* Buttons ------------------------------------------------------------------ */
+
+.payment-btn {
+    background-color: #0E53A7;
+    color: white;
+    border-radius: 6px;
+}
+
+.review-btn {
+    margin: 20px 0px 20px 0px;
+}
+
+.btn {
+    padding: 4px 12px;
+}
+
+.home-btn-area {
+    height: 150px;
+    text-align: center;
+}
+
+.course-btn {
+    line-height: 150px;
+    text-shadow: 0px 0px 3px #000000;
+    font-size: 60px;
+    background-color: #0E53A7;
+    color: white;
+    text-decoration: none;
+}
+
+.red-btn {
+    background-color: red;
+    border-radius: 4px;
+    color: white;
 }
 
 /* Styling of courses.html -------------------------------------------------- */
@@ -56,28 +91,15 @@ h5 {
 
 }
 
-/* Styling food_order.html -------------------------------------------------- */
+/* Misc fixes --------------------------------------------------------------- */
 
-.food-order {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 90px;
-    height: 100px;
-    margin: 0 auto;
+.accountform {
+    margin-top: 50px;
 }
 
-.food-order-box {
-    background-color: white;
-    padding-bottom: 20px;
-    min-height: 150px;
+.center {
+    text-align: center;
 }
-
-.food-order-description {
-    min-height: 30px;
-}
-
-/* Styling utensils.html ---------------------------------------------------- */
 
 .sort-inline {
     display: flex;
@@ -88,20 +110,44 @@ h5 {
     font-size: 20px;
 }
 
+.row.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.reset-page {
+    margin-top: 50px;
+}
+
+.form-control {
+    height: 30px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* cart.html styling -------------------------------------------------------- */
+
+.delete-from-cart {
+    margin-top: 20px;
+}
+
+/* checkout.html styling ---------------------------------------------------- */
+
 .checkout-summary {
     font-size: 20px;
     margin: 20px 0px 20px 0px;
 }
 
 .summary-item {
-
     font-family: nunito;
     font-weight: 800;
     color: #0E53A7;
-
 }
 
-.summary-cost {}
+/* Custom hr tags ----------------------------------------------------------- */
 
 .hr-dark-grey {
     border: 1px solid grey;
@@ -116,15 +162,20 @@ h5 {
     width: 40%;
 }
 
-.payment-btn {
-    background-color: #0E53A7;
-    color: white;
-    border-radius: 6px;
-}
+/* Styling of footer -------------------------------------------------------- */
 
 .social-links {
     font-size: 30px;
 }
+
+.footer {
+    background-color: #262626;
+    min-height: 150px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* reviews.html & create_review --------------------------------------------- */
 
 .review-header {
     font-size: 100px !important;
@@ -148,20 +199,10 @@ h5 {
     padding: 10px;
     background-color: #0E53A7;
     border-radius: 4px;
-
 }
-
 
 .review-form {
     margin-top: 30px;
-}
-
-.footer {
-    background-color: #262626;
-    min-height: 150px;
-    padding: 20px;
-    text-align: center;
-
 }
 
 .review-inner-header {
@@ -170,9 +211,35 @@ h5 {
     font-size: 20px;
 }
 
-.review-btn {
-    margin: 20px 0px 20px 0px;
+/* Styling of nav ----------------------------------------------------------- */
+
+.navbar {
+    background-image: linear-gradient(#0E53A7, #126fe0);
 }
+
+.navbar-form {
+    margin-top: 10px;
+}
+
+.logo {
+    height: 32px;
+    margin-top: 7px;
+}
+
+/* profile.html styling -------------------------------------------------- */
+
+.profile-box {
+    border-radius: 4px;
+    background-color: #0E53A7;
+    color: white;
+    margin-top: 40px;
+}
+
+.profile-inner {
+    margin-bottom: 70px;
+}
+
+/* Multi use ---------------------------------------------------------------- */
 
 .header {
     font-size: 30px;
@@ -186,12 +253,6 @@ h5 {
     background-size: cover;
 }
 
-.row.row-flex {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
 .panel-default {
     border-color: transparent;
     padding: 0 10px;
@@ -200,32 +261,6 @@ h5 {
 .panel-body {
     height: 100%;
     border: 1px solid #ddd;
-}
-
-
-
-.navbar {
-    background-image: linear-gradient(#0E53A7, #126fe0);
-}
-
-.reset-page {
-    margin-top: 50px;
-}
-
-.form-control {
-    height: 30px;
-}
-
-.delete-from-cart {
-    margin-top: 20px;
-}
-
-.btn {
-    padding: 4px 12px;
-}
-
-.navbar-form {
-    margin-top: 10px;
 }
 
 .bg-image-full {
@@ -239,25 +274,6 @@ h5 {
     font-family: nunito;
     font-weight: 800;
     color: white;
-}
-
-.home-btn-area {
-    height: 150px;
-    text-align: center;
-}
-
-.course-btn {
-    line-height: 150px;
-    text-shadow: 0px 0px 3px #000000;
-    font-size: 60px;
-    background-color: #0E53A7;
-    color: white;
-    text-decoration: none;
-}
-
-
-a:hover {
-    text-decoration: none;
 }
 
 .link-to {
@@ -291,35 +307,7 @@ a:hover {
     color: #e3c800;
 }
 
-.accountform {
-    margin-top: 50px;
-}
-
-.profile-box {
-    border-radius: 4px;
-    background-color: #0E53A7;
-    color: white;
-    margin-top: 40px;
-}
-
-.profile-inner {
-    margin-bottom: 70px;
-}
-
-.center {
-    text-align: center;
-}
-
-.red-btn {
-    background-color: red;
-    border-radius: 4px;
-    color: white;
-}
-
-.logo {
-    height: 32px;
-    margin-top: 7px;
-}
+/* Media queries -------------------------------------------------- */
 
 @media (min-width: 768px) {
     .navbar-form .form-control {
