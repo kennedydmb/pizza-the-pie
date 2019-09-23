@@ -26,7 +26,8 @@ SECRET_KEY = "SECRET_KEY"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['95d41396594d4ddbb62a930687a27b7d.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = ['95d41396594d4ddbb62a930687a27b7d.vfs.cloud9.us-east-1.amazonaws.com',os.environ.get('C9_HOSTNAME'),
+                 '127.0.0.1']
 
 
 # Application definition
@@ -143,3 +144,10 @@ STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = "EMAIL_ADDRESS"
+EMAIL_HOST_PASSWORD = "EMAIL_PASSWORD"
+EMAIL_PORT = 587
