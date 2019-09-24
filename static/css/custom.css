@@ -132,6 +132,10 @@ a:hover {
     margin-left: 0%
 }
 
+.qty-height{
+    height: 30px;
+}
+
 /* cart.html styling -------------------------------------------------------- */
 
 .delete-from-cart {
@@ -214,6 +218,10 @@ a:hover {
     margin-top: 20px;
     min-height: 30px;
     font-size: 20px;
+}
+
+.review-sm-img {
+    height: 190px;
 }
 
 /* Styling of nav ----------------------------------------------------------- */
