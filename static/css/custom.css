@@ -128,6 +128,10 @@ a:hover {
     text-decoration: none;
 }
 
+.navbar-form {
+    margin-left: 0%
+}
+
 /* cart.html styling -------------------------------------------------------- */
 
 .delete-from-cart {
@@ -192,6 +196,7 @@ a:hover {
 .review-header-sm {
     margin-left: 10px;
     margin-right: 10px;
+    text-shadow: 0 0 14px black;
 }
 
 .review-info-area {
@@ -219,6 +224,7 @@ a:hover {
 
 .navbar-form {
     margin-top: 10px;
+    margin-left: 0%;
 }
 
 .logo {
