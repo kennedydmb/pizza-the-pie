@@ -19,7 +19,7 @@ An application that allows users to browse training courses.
 Create and account to purchase training courses.
 Allows users to purchase courses using Stripe.
 
-[Deployed on Heroku]()
+[Deployed on Heroku](https://pizza-the-pie.herokuapp.com)
 
 ## UX
 ![Device Responsiveness Display]("Device displays")
