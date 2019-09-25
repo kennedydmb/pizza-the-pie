@@ -24,7 +24,7 @@ from sort import urls as urls_sort
 from reviews import urls as urls_reviews
 from home.views import home
 from courses.views import all_courses
-from reviews.views import course_review
+from reviews.views import course_review, add_review
 from django.views import static
 from .settings import MEDIA_ROOT
 

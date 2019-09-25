@@ -9,7 +9,7 @@
     <!-- Displays review form -->
     <div class="review-form">
         <div class="col-xs-10 col-xs-offset-1">
-            <form method="POST" action="{% url 'add_review' course.id %}">
+            <form method="POST">
                 {% csrf_token %} {{ form | as_bootstrap }}
                 <input type="submit" name="save" />
             </form>

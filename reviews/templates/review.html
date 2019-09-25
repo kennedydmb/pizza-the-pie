@@ -20,9 +20,7 @@
                 <span class="sort-inline review-inner-header">Description</span>
                 <hr class="hr-dark-grey" />
                 <p class="course-description">{{ course.description }}</p>
-                <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ course.price }}</p>
 
-                {% if user.is_authenticated %}
                 <!-- Add to cart -->
                 <form method="post" action="{% url 'add_to_cart' course.id %}">
                     {% csrf_token %}
@@ -33,29 +31,18 @@
                         </span>
                     </div>
                 </form>
-                {% endif %}
 
                 <!-- If user is logged in they can leave a review -->
                 {% if user.is_authenticated %}
-                <a href="{% url 'add_review' course.id %}"> Click Me </a>
-                <!--<div>-->
-                <!--    <form method="post" action="{% url 'add_review' course.id %}">-->
-                <!--        {% csrf_token %}-->
-                <!--        <button class="btn btn-success review-btn" type="submit">Leave a review</button>-->
-                <!--    </form>-->
-                <!--</div>-->
-                {% endif %}
-                <hr class="hr-dark-grey" /> 
+                <a href="{% url 'add_review' course.id %}" class="btn btn-success review-btn"> Leave a review </a>
+                <hr class="hr-dark-grey" /> {% endif %}
             </div>
 
             <!-- Displays the most recent 10 reviews -->
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <span class="sort-inline review-inner-header">Reviews (Most recent 10)</span>
                 <hr class="hr-dark-grey" />
-                <p>
-                    <h3 class="light-text">{{ course.average_rating | floatformat }} <i class="fa fa-star star-color" aria-hidden="true"></i></h3>
-                </p>
-                <hr class="hr-dark-grey" />
+
                 <!-- Loops through each review in reviews -->
                 {% for review in reviews %}
                 <div>
