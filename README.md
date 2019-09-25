@@ -30,6 +30,8 @@ This app would allow a training business a platform to showcase their services, 
 would allow pizza shop owners to browse potential courses for their business..
 The app could also be joined with the [previous project.](https://github.com/kennedydmb/pizza-database-project)
 
+[images](/IMAGES.md)
+
 ### User Stories.
 - As a training business owner I want a platform to showcase our training programs. 
 I would want potential customers to have the ability to ourchase courses and leave reviews.
