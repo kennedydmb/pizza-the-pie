@@ -11,7 +11,7 @@
             <button class="btn btn-default" type="submit">Price <i class="fa fa-arrow-down" aria-hidden="true"></i></button>
         </form>
         <form class="navbar-form" action="{% url 'name_ascend' %}" method="get">
-            <button class="btn btn-default "  action="{% url 'name_ascend' %}" type="submit">Name <i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+            <button class="btn btn-default " action="{% url 'name_ascend' %}" type="submit">Name <i class="fa fa-arrow-up" aria-hidden="true"></i></button>
         </form>
         <form class="navbar-form" action="{% url 'name_descend' %}" method="get">
             <button class="btn btn-default" type="submit">Name <i class="fa fa-arrow-down" aria-hidden="true"></i></button>
@@ -30,10 +30,13 @@
 
                     <!-- Some details of cart item -->
                     <h3 class="light-text">{{ course.name }}</h3>
-                    <p>{{ course.average_rating | floatformat }} <i class="fa fa-star star-color" aria-hidden="true"></i><a href="{% url 'course_review' course.id %}"> Learn more</a></p>
+                    <p>{{ course.average_rating | floatformat }} <i class="fa fa-star star-color" aria-hidden="true"></i>
+                        <a href="{% url 'course_review' course.id %}"> Learn more</a>
+                    </p>
                     <p class="course-description">{{ course.description }}</p>
                     <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ course.price }}</p>
 
+                    {% if user.is_authenticated %}
                     <!-- Allows user to choose the quantity of item they would like -->
                     <form method="post" action="{% url 'add_to_cart' course.id %}">
                         {% csrf_token %}
@@ -44,13 +47,14 @@
                         </span>
                         </div>
                     </form>
+                    {% endif %}
                 </div>
             </div>
             <hr/>
         </div>
         {% endfor %}
     </div>
-    
+
     <!-- If there are more than 6 items on the page, the user can navigate through them here -->
     <div class="pagination">
         <span class="step-links">

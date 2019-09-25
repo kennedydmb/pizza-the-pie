@@ -22,6 +22,7 @@
                 <p class="course-description">{{ course.description }}</p>
                 <p><i class="fa fa-gbp" aria-hidden="true"></i> {{ course.price }}</p>
 
+                {% if user.is_authenticated %}
                 <!-- Add to cart -->
                 <form method="post" action="{% url 'add_to_cart' course.id %}">
                     {% csrf_token %}
@@ -32,16 +33,19 @@
                         </span>
                     </div>
                 </form>
+                {% endif %}
 
                 <!-- If user is logged in they can leave a review -->
                 {% if user.is_authenticated %}
-                <div>
-                    <form method="post" action="{% url 'add_review' course.id %}">
-                        {% csrf_token %}
-                        <button class="btn btn-success review-btn" type="submit">Leave a review</button>
-                    </form>
-                </div>
-                <hr class="hr-dark-grey" /> {% endif %}
+                <a href="{% url 'add_review' course.id %}"> Click Me </a>
+                <!--<div>-->
+                <!--    <form method="post" action="{% url 'add_review' course.id %}">-->
+                <!--        {% csrf_token %}-->
+                <!--        <button class="btn btn-success review-btn" type="submit">Leave a review</button>-->
+                <!--    </form>-->
+                <!--</div>-->
+                {% endif %}
+                <hr class="hr-dark-grey" /> 
             </div>
 
             <!-- Displays the most recent 10 reviews -->

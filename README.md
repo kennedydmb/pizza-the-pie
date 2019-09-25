@@ -177,6 +177,7 @@ Tested a small group of people (3-4)
 
 ### Known Bugs
 - Pagination does not yet work correctly when using the search function. 
+- Add to cart still appears when user is not logged in.
 
 ## Deployment
 - The code was developed locally using the AWS Cloud9 IDE.

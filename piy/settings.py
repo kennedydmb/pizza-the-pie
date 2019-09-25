@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "SECRET_KEY"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['95d41396594d4ddbb62a930687a27b7d.vfs.cloud9.us-east-1.amazonaws.com',os.environ.get('C9_HOSTNAME'),'pizza-the-pie.herokuapp.com']
 
