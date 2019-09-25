@@ -177,6 +177,7 @@ Tested a small group of people (3-4)
 
 ### Known Bugs
 - Pagination does not yet work correctly when using the search function. 
+- After submitting a review you are redirected to the courses page rather than the course review page.
 
 ## Deployment
 - The code was developed locally using the AWS Cloud9 IDE.
