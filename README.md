@@ -22,7 +22,7 @@ Allows users to purchase courses using Stripe.
 [Deployed on Heroku](https://pizza-the-pie.herokuapp.com)
 
 ## UX
-![Device Responsiveness Display]("Device displays")
+![Device Responsiveness Display](https://imgur.com/qQaScKQ.png "Device displays")
 
 ### Users
 At this stage the intended users are anyone that would like to view or purchase courses.
@@ -30,18 +30,16 @@ This app would allow a training business a platform to showcase their services, 
 would allow pizza shop owners to browse potential courses for their business..
 The app could also be joined with the [previous project.](https://github.com/kennedydmb/pizza-database-project)
 
-[images](/IMAGES.md)
-
 ### User Stories.
 - As a training business owner I want a platform to showcase our training programs. 
 I would want potential customers to have the ability to ourchase courses and leave reviews.
 - As small pizza shop owner I would like to see available training courses for my business.
 
 ### Wireframe
-Wireframe can be found [here]( "Original Web App Wireframe")
+Wireframe can be found [here](/WIREFRAME.md "Original Web App Wireframe")
 
 #### Difference To Deployed Version
-
+- Welcome page: 
 
 ### Design
 For the color palate I used this [color scheme website](http://colorschemedesigner.com/csd-3.5/)
