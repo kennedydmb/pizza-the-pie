@@ -80,6 +80,7 @@ With the main color being #0E53A7
 
 #### Payments
 - Customers can pay for orders using and API called Stripe (However at the moment it is in testing mode)
+- To "pay" use 4242 4242 4242 4242 as the card number.
 
 #### Account Reset
 - If users would like to reset their password they can go to their profile and select the option to do so. They will then recieve a link to change their password by email.
