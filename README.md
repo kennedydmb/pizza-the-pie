@@ -22,7 +22,7 @@ Allows users to purchase courses using Stripe.
 [Deployed on Heroku](https://pizza-the-pie.herokuapp.com)
 
 ## UX
-![Device Responsiveness Display](https://imgur.com/qQaScKQ.png "Device displays")
+![Device Responsiveness Display](https://imgur.com/uTvta2a.png "Device displays")
 
 ### Users
 At this stage the intended users are anyone that would like to view or purchase courses.
@@ -153,18 +153,6 @@ Was used to test:
 - iPad
 - iPad Pro
 - Desktop
-
-[Responsive Design](http://ami.responsivedesign.is/) was used to check viewports:
-
-- Desktop
-1600x992px scaled down to scale(0.3181)
-- Laptop
-1280x802px scaled down to scale(0.277)
-- Tablet
-768x1024px scaled down to scale(0.219)
-- Mobile
-320x480px scaled down to scale(0.219)
-
 Page is fully responsive.
 
 ### Code Testing
